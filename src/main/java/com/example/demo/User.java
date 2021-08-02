@@ -13,13 +13,10 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long accountNumber;
 
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "email")
     private String email;
@@ -27,23 +24,21 @@ public class User {
     @Column(name = "phone")
     private String phone;
 
-    public long getId() {
-        return id;
+    @Column(name = "balance")
+    private double balance;
+
+
+    public long getAccountNumber() {
+        return accountNumber;
     }
-    public void setId(long id) {
-        this.id = id;
+    public void setAccountNumber(long accountNumber) {
+        this.accountNumber = accountNumber;
     }
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getEmail() {
         return email;
@@ -56,5 +51,11 @@ public class User {
     }
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
